@@ -3,9 +3,10 @@
 const {expect} = require ('chai');
 const {execSync} = require('child_process');
 
+
 describe('cal',() => {
   describe('CLI', () => {
-  it('should handle the current momth', () => {
+  xit('should handle the current momth', () => {
     const goal = execSync('cal').toString();
     const output = execSync('./cal.js').toString();
 
@@ -14,14 +15,20 @@ describe('cal',() => {
   });
 
   describe("Zeller's congruence", () => {
-    //const zellers = require('../lib/zellers.js')
+    const zellers = require('../lib/zellers.js')
 
     describe('.modified_month', () => {
       it('return 13 for January', () => {
         expect(zellers.modifiedMonth(1)).to.equal(13);
       });
-      //2 === 14
-      //3 === 3
+      
+      it('return 14 for February', () => {
+        expect(zellers.modifiedMonth(2)).to.equal(14);
+      });
+
+      it('return 3 for March', () => {
+        expect(zellers.modifiedMonth(3)).to.equal(3);
+      });
     });
 
     describe('.modifiedYear', () => {
