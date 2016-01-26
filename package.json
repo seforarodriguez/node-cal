@@ -1,0 +1,19 @@
+{
+  "name": "node-cal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cal.js",
+  "scripts": {
+    "test": "mocha --harmony_destructuring tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seforarodriguez/node-cal.git"
+  },
+  "author": "“Sefora",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seforarodriguez/node-cal/issues"
+  },
+  "homepage": "https://github.com/seforarodriguez/node-cal#readme"
+}
