@@ -6,7 +6,7 @@ const {execSync} = require('child_process');
 
 describe('cal',() => {
   describe('CLI', () => {
-  xit('should handle the current momth', () => {
+  xit('should handle the current month', () => {
     const goal = execSync('cal').toString();
     const output = execSync('./cal.js').toString();
 
@@ -65,11 +65,6 @@ describe('cal',() => {
       it('returns 4 (Thursday) for March 1, 2300', () => {
        expect(zellers.getDay(2300, 3, 1)).to.equal(4);
       });
-
-
-
-      // 2200, 3, 2 === 0
-      // 2300, 3, 1 === 4
      })
 
      describe('get the current month', () => {
@@ -78,6 +73,29 @@ describe('cal',() => {
         const calResult = execSync('cal').toString();
         expect(Output.currentMonth()).to.equal(calResult);
       });
+
+      xit('should load the Month, Year and WeekDays', () => {
+        const calResult =`    January 2016\nSu Mo Tu We Th Fr Sa\n`;
+        expect(Output.currentMonth(1, 2016)).to.equal(calResult);
+      });
+
+      it('should show blank space in a week', () => {
+        const calResult = `                    \n`;
+        expect(Output.blankSpaceControl()).to.equal(calResult);
+      });
+
+      it('should show blank space in a week', () => {
+        const calResult = `                    \n`;
+        expect(Output.blankSpaceControl()).to.equal(calResult);
+      });
+
+       it('should show blank space in a week', () => {
+        const calResult = `                    \n`;
+        expect(Output.blankSpaceControl()).to.equal(calResult);
+      });
+
+
+
     });
    })
 });
