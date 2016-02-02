@@ -69,7 +69,7 @@ describe('cal',() => {
 
      describe('get the current month', () => {
       const Output = require('../lib/month.js');
-      it('should load the current month', () => {
+      xit('should load the current month', () => {
         const calResult = execSync('cal').toString();
         expect(Output.currentMonth()).to.equal(calResult);
       });
@@ -79,23 +79,12 @@ describe('cal',() => {
         expect(Output.currentMonth(1, 2016)).to.equal(calResult);
       });
 
-      it('should show blank space in a week', () => {
-        const calResult = `                    \n`;
-        expect(Output.blankSpaceControl()).to.equal(calResult);
+      it('it should show weekdays starting on Friday', () => {
+        const calResult = execSync('cal').toString()
+        console.log('----->', Output.currentMonth());
+        expect(Output.currentMonth()).to.equal(calResult);
       });
 
-      it('should show blank space in a week', () => {
-        const calResult = `                    \n`;
-        expect(Output.blankSpaceControl()).to.equal(calResult);
-      });
-
-       it('should show blank space in a week', () => {
-        const calResult = `                    \n`;
-        expect(Output.blankSpaceControl()).to.equal(calResult);
-      });
-
-
-
-    });
+     });
    })
 });
